@@ -47,9 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 					<tbody>
 <?php
 $query = "SELECT * FROM students";
-$result = mysqli_query($connection, $query);	// object or null
+$result = mysqli_query($connection, $query);
 
-if (!is_null($result)) {
+if ($result != false) {
 	if ($result->num_rows > 0) {
 		while ($row = $result->fetch_assoc()) {
 			$id = $row["id"];
